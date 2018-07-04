@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.newcharge.mapper.EmpMapper">
+
+	<select id="findAll" resultType="Emp">
+		select * from emp order by empno desc
+	</select>
+	
+	<insert id="save">
+		insert into emp (empno, ename)
+		values (emp_seq.nextval, #{ename})
+	</insert>
+</mapper>
